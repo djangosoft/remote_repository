@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html>
+<head>
+    {% block title %}
+        <title>Feedback</title>
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+    #aa{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+    }</style>
+
+     <div class="container-fluid">
+        <div class="row">
+         <div class="col-md-6 w3-card-4" id="aa">
+             <h1 style="background-color: white; text-align: center; border-radius: 5px">Give Your Valuable Feedback</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ fform }}
+                    <center>
+                        <br>
+                        <input type="submit" value="Send" class="btn btn-outline-success">
+                        <input type="reset" value="Clear" class="btn btn-outline-danger">
+                    </center>
+                </form>
+            </div>
+            <div class="col-md-6" id="aa" style="border: white 4px solid;">
+                {% if feedbacks %}
+                  <h1 style="background-color: white; border-radius: 5px">Available Feedbacks</h1>
+                  {% for i in feedbacks %}
+                   {% if i.ratings >= 5 and i.ratings <= 10 %}
+                     <b>Name:{{ i.name|capfirst }}</b><br>
+                      Ratings:{{ i.ratings }}<br>
+                      Date:{{ i.date }}<br>
+                      Feedback:{{i.feedback}}<br><br>
+                   {% endif %}
+                  {% endfor %}
+                {% else %}
+                    <h1>Feedbacks Are Not Available.</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

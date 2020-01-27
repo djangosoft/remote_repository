@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    {% block title %}
+        <title>Contact</title>
+    {% endblock %}
+</head>
+<style>
+{% block content %}
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   <style>
+    #aa{
+  border: white 3px solid;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+    }</style>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 w3-card-4" id="aa">
+                <form action="/action_page.php" method="POST">
+                    {% csrf_token %}
+                    <h1 style="background-color: white; font-size: 28px">Submit Your Details to Connect With Us:</h1>
+                    <br>
+                    {{ abcd}}
+                    <br>
+                    <center>
+                        <input type="submit" value="Send" class="btn btn-outline-success">
+                        <input type="reset" value="Clear" class="btn btn-outline-danger">
+                    </center>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.516913957692!2d78.44635144959085!3d17.434956187991475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c8e1328867%3A0x5d7872a0a2c0d6af!2sSai%20Ganga%20Enclave!5e0!3m2!1sen!2sin!4v1578160388875!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% load static %}
+<html>
+<head>
+    {% block title %}
+    <title>DjangoSoft</title>
+    {% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Autour One' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+    li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+padding: 10px 12px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: lightgrey;
+}
+    a{margin-right: 50px; font-size: large; text-decoration-line: none}
+    h1{text-align: center;
+        font-family: "DejaVu Serif";
+
+    }
+    hr{margin-top: -30px;border: 2px solid black;}
+    h2{text-align: center;font-size: 100px;color: red;}
+        .footer {
+            margin-top: 10px;
+   position: -webkit-sticky;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: black;
+   text-align: center;
+}
+    .w3-button{
+        font-family: 'Autour one';
+        padding: 8px 10px;
+        font-size: 16px;
+    }
+</style>
+<body>
+<ul>
+    <div class="w3-bar w3-border w3-card-4 w3-light-grey fixed-top">
+ <a href="/home/" class="navbar-brand"><img src="{% static 'images/logo.png'%}" width="150px"></a>
+  <li><a class="active w3-button" href="/home/">Home</a></li>
+  <li><a href="/contact/" class="w3-button">Contact</a></li>
+  <li><a href="/services/" class="w3-button">Services</a></li>
+  <li><a href="/gallery/" class="w3-button">Gallery</a></li>
+  <li><a href="/feedback/" class="w3-button">Feedback</a></li>
+    </div>
+</ul>
+<br>
+<br>
+<br>
+<h1>Welcome to Djangosoft</h1>
+<hr>
+{% block content %}
+{% endblock %}
+<div class="footer w3-bar w3-border w3-card-4 w3-light-grey">
+  <h1>Thankyou For Visit us..</h1>
+</div>
+</body>
+</html>

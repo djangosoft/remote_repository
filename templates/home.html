@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+<head>
+    {% block title %}
+        <title>Home</title>
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7 w3-card-4">
+            <h3 style="font-family: 'Droid Serif'">DJANGO means DjangoSoft:</h3>
+            <p>In DjangoSoft, Millions of Students trains every year and get their dream job in MNC's. We provide education with quality in efficient fees and duration time.More than 10+ of years experienced faculties and realtime projects.</p>
+            <h3 style="font-family: 'Droid Serif'">Founder:</h3>
+            <p>
+                The institute Founded by Mr. Pranay Tiwari, in 2004.Mr. Pranay worked 5 years in TCS and after that resign the job and started the institute.He worked hard and make this institute to stand with top institutes in Hyderabad.
+            </p>
+            <h3 style="font-family: 'Droid Serif'">About Institute:</h3>
+            <p>Djangosoft Institute Provides a lot of courses related to IT Industry like JAVA,Python,Dot Net,Django,Spring,Testing tools,Hadoop,DataScience,Devops, Machine-Learning etc.We provide Interview classes, realtime projects,Internships,and campus too.To know more please visit our <a href="/services/">Services page.</a></p>
+
+        </div>
+        <div class="col-md-5">
+            <img src="{% static 'images/myphoto.jpg' %}" width="500px" alt="OOPS FILE MISSING" class="w3-card-4">
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>
